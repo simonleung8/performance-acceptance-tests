@@ -1,0 +1,98 @@
+html, body {
+	padding:0; margin:0;
+	width:100%;
+}
+
+a {
+	color: rgb(0,128,255);
+}
+a:hover {
+	color: #fff;
+}
+
+.mainContentDiv {
+	width:750px; 
+	margin:auto; 
+	min-width:750px; 
+	max-width:750px; 
+	position: relative;	
+}
+
+.slideContent {
+	position:relative;
+	margin:auto;
+	width:100%;
+	display:none;
+}
+
+.tourneyInfoBox {
+	width:100%; 
+	background:rgba(255,255,255,0.35);
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding: 10px;
+	color: #333;
+	text-shadow: 0 1px 0 #ffffff;
+}
+
+.contentHost {
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	height:250px;
+	width:100%;
+	position:relative;
+	padding:10px;		
+	color:#333;
+}
+
+.chk-container {
+	width:150px; 
+	position:absolute;
+	right:5px; 
+	top:-35px; 
+	color:#555;
+}
+
+.chk-disabled {
+	text-decoration: line-through;
+	color: #aaa;
+}
+
+.contentOut {
+	-moz-animation:contentHide 0.5s 1 both; 
+	-webkit-animation:contentHide 0.5s 1 both;
+	-ms-animation:contentHide 0.5s 1 both;
+}	
+@-webkit-keyframes contentHide {
+    0% { -webkit-transform: translate3d(0, 0, 0); -webkit-opacity: 1;}
+	30% {-webkit-opacity: 0;}
+    100% { -webkit-transform: translate3d(0, -50px, 0); -webkit-opacity: 0;}
+	}
+@-moz-keyframes contentHide {
+	0% { -moz-transform: translate(0, 0); opacity: 1;}
+    90% {opacity: 0;}
+	100% { -moz-transform: translate(0, -50px); opacity:0;}
+}
+@-ms-keyframes contentHide {
+    0% { -ms-transform: translate3d(0, 0, 0); -ms-opacity: 1;}
+	30% {-ms-opacity: 0;}
+    100% { -ms-transform: translate3d(0, -50px, 0); -ms-opacity: 0;}
+}
+
+.contentIn {
+	-moz-animation:contentShow 0.5s 1 both; 
+	-webkit-animation:contentShow 0.5s 1 both;
+	-ms-animation:contentShow 0.5s 1 both;
+}	
+@-webkit-keyframes contentShow {
+    0% { -webkit-transform: translate3d(-2000px, 0, 0); }
+    100% { -webkit-transform: translate3d(0, 0, 0); }
+}
+@-moz-keyframes contentShow {
+   	0% { -moz-transform: translate(-2000px, 0); }
+    100% { -moz-transform: translate(0, 0); }
+}
+@-ms-keyframes contentShow {
+    0% { -ms-transform: translate3d(-2000px, 0, 0); }
+    100% { -ms-transform: translate3d(0px, 0, 0); }
+}
