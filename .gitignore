@@ -6,6 +6,7 @@
 # Folders
 _obj
 _test
+ui/nodecli/node_modules
 
 # Architecture specific extensions/prefixes
 *.[568vq]
