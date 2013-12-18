@@ -1,1 +1,9 @@
 # This will be the main manifest that deploys each application
+applications:
+  ./go_worker:
+    name: go_worker
+    host: ${name}
+    domain: ${target-base}
+    memory: 256M
+    instances: 1
+    buildpack: https://github.com/michaljemala/cloudfoundry-buildpack-go.git
