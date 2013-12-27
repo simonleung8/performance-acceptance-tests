@@ -23,29 +23,21 @@
     <div style="background:rgb(0,131,187); height:5px;"></div>
     <div style="height:25px;"></div>
 
-    <!-- ********** Console Wrapper ********** -->
+    <!-- ********** Control Wrapper ********** -->
     <div style="width:35%; top:150px; bottom: 100px; padding:5px; position:absolute;">
-        <div class="tourneyInfoBox"> <!-- Tourney Info -->
-            <dl class="dl-horizontal">
-                <dt>Field 1</dt>
-                <dd>Field a1</dd>
-            </dl>
-            testing text here <br><br>><hr>><hr>><hr><hr>end of text
+        <div class="tourneyInfoBox" style="height:100%"> <!-- Tourney Info -->
+            <button id='cmd1' type="button" class="btn btn-default btn-block">cf login</button>
+            <button id='cmd2' type="button" class="btn btn-default btn-block">cf apps</button>
+            <button id='cmd3' type="button" class="btn btn-default btn-block">cf targets</button>
         </div>
     </div>
 
-    <!-- ********** Control Wrapper ********** -->
+    <!-- ********** Console Wrapper ********** -->
     <div style="width:65%; left:35%; top:150px; bottom: 100px;  padding:5px; position:absolute;">
-          <div id="console">
-              Console:<br>
-              > <font class="success">Performance stats shows here</font><br>
-              > <font class="blink">_</font>
-          </div>
-        <div class="tourneyInfoBox"> <!-- Tourney Info -->
-            <dl class="dl-horizontal">
-                <dt>Field 1</dt>
-                <dd>Field a1</dd>
-            </dl>
+        <div id="console">
+            Console:<br>
+            > <font class="success">Performance stats shows here</font><br>
+            > <font class="blink">_</font><br>
         </div>
     </div>
 
@@ -55,7 +47,9 @@
         Suite Testing Suite
     </div>
 
+    <script>
+        var _app = new app();
+    </script>
+
 </body>
-
-
 </html>

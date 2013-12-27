@@ -1,7 +1,21 @@
 var redis = require("redis");
- //var url = require("url").process.env.VCAP_SERVICES
- //var client = redis.createClient("6379","10.244.0.46");
-//////var client.auth("p@ssword", function(){});
+//var url = require("url").process.env.VCAP_SERVICES
+//var client = redis.createClient("6379","10.244.0.46");
+//var client.auth("p@ssword", function(){});
+var client = redis.createClient("6379","127.0.0.1");
+var client2 = redis.createClient("6379","127.0.0.1");
+
+client.on("subscribe", function (channel, count) {
+    client2.publish("cmd channel", "I am sending a message.");
+    client2.publish("cmd channel", "I am sending a second message.");
+    client2.publish("cmd channel", "I am sending my last message.");
+});
+
+client.on("message", function (channel, message) {
+    console.log(channel + ": " + message);
+});
+
+client.subscribe("cmd channel");
 
 var express = require('express');
 var app = express();
@@ -12,6 +26,12 @@ var redis_str = '';
 //app.get('/',function(req, res) {
   //res.send("Reply1:<br>" + redis_str + "<br>" + process.env.VCAP_SERVICES + "<br>" + process.env.VCAP_SERVICES['user-provided']);
 //});
+
+app.get('/cmd', function(req, res){
+    client.set("cmd_str", "cf login", redis.print);
+    res.send(200);
+    console.log("set redis comd");
+});
 
 app.configure(function(){
   app.set('port', process.env.PORT || 8088);
